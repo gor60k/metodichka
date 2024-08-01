@@ -4,30 +4,37 @@ import ProductsView from '../views/ProductsView.vue';
 import IndividualsView from '../views/IndividualsView.vue';
 import OrganizationsView from '../views/OrganizationsView.vue';
 import CreateView from '../views/CreateView.vue';
+import {
+  proxy,
+  products,
+  individuals,
+  organizations,
+  create,
+} from '@/utils/routes';
 
 const routes = [
   {
-    path: '/',
+    path: proxy,
     name: 'proxy',
     component: ProxyView,
   },
   {
-    path: '/products',
+    path: products,
     name: 'products',
     component: ProductsView,
   },
   {
-    path: '/individuals',
+    path: individuals,
     name: 'individuals',
     component: IndividualsView,
   },
   {
-    path: '/organizations',
+    path: organizations,
     name: 'organizations',
     component: OrganizationsView,
   },
   {
-    path: '/create',
+    path: create,
     name: 'create',
     component: CreateView,
   },
