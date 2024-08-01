@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import ProxyView from '../views/ProxyView.vue';
+import ProxyView from '../views/proxy-view/proxy-view/ProxyView.vue';
 import ProductsView from '../views/ProductsView.vue';
 import IndividualsView from '../views/IndividualsView.vue';
 import OrganizationsView from '../views/OrganizationsView.vue';
