@@ -1,47 +1,71 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
-import ProxyView from '../views/ProxyView.vue';
-import ProductsView from '../views/ProductsView.vue';
-import IndividualsView from '../views/IndividualsView.vue';
-import OrganizationsView from '../views/OrganizationsView.vue';
-import CreateView from '../views/CreateView.vue';
-import {
-  proxy,
-  products,
-  individuals,
-  organizations,
-  create,
-} from '@/utils/routes';
+import { createRouter, createWebHistory } from 'vue-router';
+import IndividualsView from "@/views/individuals-view/IndividualsView";
+import PocupatelsView from "@/views/pocupatels-view/PocupatelsView";
+import OrganizationsView from "@/views/organizations-view/OrganizationsView";
+import SelladresssView from "@/views/selladresss-view/SelladresssView";
+import StudListView from "@/views/stud-view/stud-list-view/StudListView";
+import StudView from "@/views/stud-view/stud-view/StudView";
+import StudCreateView from "@/views/stud-view/stud-view/StudCreateView";
+import ProductsView from "@/views/product-view/ProductsView";
+import ProxyListView from "@/views/proxy-view/proxy-list-view/ProxyListView";
+import ProxyView from "@/views/proxy-view/proxy-view/ProxyView";
+import ProxyCreateView from "@/views/proxy-view/proxy-view/ProxyCreateView";
+import { ROUTE_PATHS } from '@/utils/routes';
 
 const routes = [
   {
-    path: proxy,
-    name: 'proxy',
-    component: ProxyView,
+    path: '/',
+    component: ProxyListView
   },
   {
-    path: products,
-    name: 'products',
-    component: ProductsView,
+    path: '/|',
+    component: StudListView
   },
   {
-    path: individuals,
-    name: 'individuals',
-    component: IndividualsView,
+    path: ROUTE_PATHS.products,
+    component: ProductsView
   },
   {
-    path: organizations,
-    name: 'organizations',
-    component: OrganizationsView,
+    path: ROUTE_PATHS.individuals,
+    component: IndividualsView
   },
   {
-    path: create,
-    name: 'create',
-    component: CreateView,
+    path: '/organizations',
+    component: OrganizationsView
   },
+  {
+    path: ROUTE_PATHS.pocupatels,
+    component: PocupatelsView
+  },
+  {
+    path: ROUTE_PATHS.selladresss,
+    component: SelladresssView
+  },
+  {
+    path: ROUTE_PATHS.proxy.list,
+    component: ProxyListView
+  },
+  {
+    path: ROUTE_PATHS.proxy.proxy,
+    component: ProxyView
+  },
+  {
+    path: ROUTE_PATHS.create,
+    component: ProxyCreateView
+  },
+  {
+    path: ROUTE_PATHS.stud.stud,
+    component: StudView
+  },
+  {
+    path: ROUTE_PATHS.create1,
+    component: StudCreateView
+  },
+
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
